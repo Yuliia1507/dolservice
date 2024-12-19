@@ -94,9 +94,9 @@ body {
 	}
 }
 .menu {
-	@media (max-width: toEm(960)) {
-		flex: 1;
-	}
+		@media (max-width: toEm(960)) {
+			flex: 1;
+		}
 	// .menu__body
 
 	&__body {
@@ -133,7 +133,7 @@ body {
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
-		@include adaptiveValue("column-gap", 40, 20, $widthTo: 1000);
+		@include adaptiveValue("column-gap",40,20, $widthTo:1000);
 		row-gap: toRem(5);
 
 		@media (max-width: toEm(960)) {
@@ -164,6 +164,9 @@ body {
 		color: #000;
 		font-size: toRem(16);
 		transition: color 0.3s;
+		&.active{
+			color: #ef233c;
+		}
 		@media (max-width: toEm(960)) {
 			font-size: toRem(28);
 		}
@@ -176,7 +179,7 @@ body {
 	@include adaptiveValue("padding-bottom", 15, 10);
 	@include adaptiveValue("padding-left", 25, 15);
 	@include adaptiveValue("padding-right", 25, 15);
-	background: #9f9fa4ca;
+			background: #9f9fa4ca;
 	font-weight: 500;
 	transition: background-color 0.3s;
 	color: #000;
@@ -253,7 +256,7 @@ body {
 //===================HERO=====================================================================
 
 .hero {
-	@include adaptiveValue("margin-top", 120, 40);
+	@include adaptiveValue("margin-top", 120,40);
 
 	// .hero__container
 
@@ -305,13 +308,13 @@ body {
 		height: toRem(50);
 		background: rgba(132, 125, 125, 0.585);
 		backdrop-filter: blur(10px);
-		img {
+		img{
 			will-change: transform;
 			transition: transform 0.3s;
 		}
-		@media (any-hover: hover) {
-			&:hover {
-				img {
+		@media(any-hover:hover){
+			&:hover{
+				img{
 					transform: scale(1.2);
 				}
 			}

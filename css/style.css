@@ -368,6 +368,9 @@ body.menu-open {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
+.menu__link.active {
+  color: #ef233c;
+}
 @media (max-width: 60em) {
   .menu__link {
     font-size: 1.75rem;

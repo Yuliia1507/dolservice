@@ -38,18 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		const windowWidth = window.innerWidth;
 		const activeLink = document.querySelector('.menu__link.active');
 
-		if (windowWidth >= 960) {
+		if (windowWidth >= 800) {
 			if (activeLink) {
 				const rect = activeLink.getBoundingClientRect();
 				const headerRect = document.querySelector('header').getBoundingClientRect();
 
 				// Використовуємо requestAnimationFrame для плавного оновлення позиції
 				requestAnimationFrame(() => {
-					const leftOffset = 5; // Додаємо відступ зліва
-					const extraWidth = 10; // Загальний додатковий розмір (5px з кожного боку)
-
-					animation.style.left = `${rect.left - headerRect.left - leftOffset}px`;
-					animation.style.width = `${rect.width + extraWidth}px`; // Додаємо 5px до кожного боку
+					animation.style.left = `${rect.left - headerRect.left - 5}px`;
+					animation.style.width = `${rect.width + 10}px`;
 					animation.classList.add('show');
 				});
 			} else {
