@@ -697,7 +697,7 @@ body.menu-open {
   width: 1.875rem;
   height: 0.3125rem;
   background-color: #ffffff;
-  border-radius: 1.25rem;
+  border-radius: 0;
   -webkit-transition: background-color 0.3s, -webkit-transform 0.3s;
   transition: background-color 0.3s, -webkit-transform 0.3s;
   transition: background-color 0.3s, transform 0.3s;

@@ -383,7 +383,7 @@ body {
 	width: toRem(30);
 	height: toRem(5);
 	background-color: #ffffff;
-	border-radius: toRem(20);
+	border-radius: 0;
 	transition:
 		background-color 0.3s,
 		transform 0.3s;
