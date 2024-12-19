@@ -294,6 +294,7 @@ body.menu-open {
             justify-content: center;
     padding: 0.9375rem;
     padding-top: 5rem;
+    z-index: 56;
   }
   .menu-open .menu__body {
     visibility: visible;
@@ -485,7 +486,7 @@ body.menu-open {
 .icon-menu {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  z-index: 20;
+  z-index: 57;
   display: none;
 }
 @media (max-width: 60em) {
