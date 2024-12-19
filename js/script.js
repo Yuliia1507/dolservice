@@ -31,6 +31,57 @@ window.addEventListener('scroll', () => {
 	}
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+	const animation = document.querySelector('.animation');
+
+	function updateAnimationPosition() {
+		const windowWidth = window.innerWidth;
+		const activeLink = document.querySelector('.menu__link.active');
+
+		if (windowWidth >= 960) {
+			if (activeLink) {
+				const rect = activeLink.getBoundingClientRect();
+				const headerRect = document.querySelector('header').getBoundingClientRect();
+
+				// Використовуємо requestAnimationFrame для плавного оновлення позиції
+				requestAnimationFrame(() => {
+					const leftOffset = 5; // Додаємо відступ зліва
+					const extraWidth = 10; // Загальний додатковий розмір (5px з кожного боку)
+
+					animation.style.left = `${rect.left - headerRect.left - leftOffset}px`;
+					animation.style.width = `${rect.width + extraWidth}px`; // Додаємо 5px до кожного боку
+					animation.classList.add('show');
+				});
+			} else {
+				animation.classList.remove('show');
+			}
+		} else {
+			animation.classList.remove('show');
+		}
+	}
+
+	// Оновлюємо позицію після завантаження всіх ресурсів
+	window.addEventListener('load', () => {
+		setTimeout(updateAnimationPosition, 200); // Збільшена затримка для повного завантаження стилів та ресурсів
+	});
+
+	// Оновлюємо позицію при зміні розміру вікна
+	window.addEventListener('resize', () => {
+		requestAnimationFrame(updateAnimationPosition);
+	});
+
+	// Динамічне перемикання активного пункту меню
+	document.querySelectorAll('.menu__link').forEach(link => {
+		link.addEventListener('click', () => {
+			document.querySelectorAll('.menu__link').forEach(l => l.classList.remove('active'));
+			link.classList.add('active');
+
+			// Використовуємо тайм-аут для коректного оновлення анімації
+			setTimeout(updateAnimationPosition, 50);
+		});
+	});
+});
+
 document.addEventListener('DOMContentLoaded', function () {
 	const heroSwiper = new Swiper('.hero__swiper', {
 		loop: true,

@@ -79,7 +79,7 @@ body {
 	// .header__logo
 
 	&__logo {
-		@include adaptiveValue("width", 330, 170, $widthTo: 1000);
+		@include adaptiveValue("width", 270, 170, $widthTo: 1000);
 		height: auto;
 		img {
 			width: 100%;
@@ -133,7 +133,7 @@ body {
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
-		column-gap: toRem(24);
+		@include adaptiveValue("column-gap",40,20, $widthTo:1000);
 		row-gap: toRem(5);
 
 		@media (max-width: toEm(960)) {
@@ -235,7 +235,21 @@ body {
 		transform: translateY(-11px) rotate(315deg);
 	}
 }
-
+.animation {
+	position: absolute;
+	bottom: 0;
+	height: toRem(3);
+	background: #ef233c;
+	transition: all 0.3s ease;
+	left: 0;
+	width: 0;
+	display: none;
+	@media (min-width: toEm(950)) {
+		&.show {
+			display: block;
+		}
+	}
+}
 //===================HERO=====================================================================
 
 .hero {
