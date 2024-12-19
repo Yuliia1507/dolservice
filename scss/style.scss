@@ -79,12 +79,12 @@ body {
 	// .header__logo
 
 	&__logo {
-		@include adaptiveValue("width", 270, 170, $widthTo: 1000);
+		@include adaptiveValue("width", 270, 170, $widthTo: 950);
 		height: auto;
 		img {
 			width: 100%;
 			height: 100%;
-			object-fit: cover;
+			object-fit: contain;
 		}
 	}
 
