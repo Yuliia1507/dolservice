@@ -306,8 +306,8 @@ body {
 		img {
 			will-change: transform;
 			transition: transform 0.3s;
-			width: toRem(50);
-			height: toRem(50);
+			@include adaptiveValue("width", 50, 35);
+			@include adaptiveValue("height", 50, 35);
 		}
 	}
 }
