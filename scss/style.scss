@@ -292,9 +292,23 @@ body {
 	&__slide {
 	}
 
-	// .hero__button-prev
-
-	&__button-prev {
+	&__links-wrap {
+		display: flex;
+		align-items: center;
+		gap: toRem(10);
+	}
+	&__link {
+		@media (any-hover: hover) {
+			&:hover img {
+				transform: scale(1.1);
+			}
+		}
+		img {
+			will-change: transform;
+			transition: transform 0.3s;
+			width: toRem(50);
+			height: toRem(50);
+		}
 	}
 }
 .swiper {
