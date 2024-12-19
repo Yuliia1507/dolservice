@@ -360,16 +360,16 @@ body.menu-open {
   }
 }
 .menu__link {
-  text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
   position: relative;
   color: #000;
-  font-size: 1rem;
+  font-size: 1.125rem;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 .menu__link.active {
   color: #ef233c;
+  font-weight: 500;
 }
 @media (max-width: 60em) {
   .menu__link {
@@ -547,7 +547,7 @@ body.menu-open {
 .animation {
   position: absolute;
   bottom: 0;
-  height: 0.1875rem;
+  height: 0.3125rem;
   background: #ef233c;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -563,18 +563,18 @@ body.menu-open {
 
 @media (min-width: 81.25em) {
   .hero {
-    margin-top: 7.5rem;
+    margin-top: 6.25rem;
   }
 }
 @media (min-width: 20em) and (max-width: 81.25em) {
-  @supports (margin-top: clamp( 2.5rem , 0.8673469388rem  +  8.1632653061vw , 7.5rem )) {
+  @supports (margin-top: clamp( 2.5rem , 1.2755102041rem  +  6.1224489796vw , 6.25rem )) {
     .hero {
-      margin-top: clamp( 2.5rem , 0.8673469388rem  +  8.1632653061vw , 7.5rem );
+      margin-top: clamp( 2.5rem , 1.2755102041rem  +  6.1224489796vw , 6.25rem );
     }
   }
-  @supports not (margin-top: clamp( 2.5rem , 0.8673469388rem  +  8.1632653061vw , 7.5rem )) {
+  @supports not (margin-top: clamp( 2.5rem , 1.2755102041rem  +  6.1224489796vw , 6.25rem )) {
     .hero {
-      margin-top: calc(2.5rem + 5 * (100vw - 20rem) / 61.25);
+      margin-top: calc(2.5rem + 3.75 * (100vw - 20rem) / 61.25);
     }
   }
 }
@@ -587,7 +587,7 @@ body.menu-open {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: calc(100vh - 7.5rem);
+  height: calc(100vh - 6.25rem);
 }
 .swiper__button-next, .swiper__button-prev {
   position: absolute;

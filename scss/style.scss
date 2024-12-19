@@ -94,9 +94,9 @@ body {
 	}
 }
 .menu {
-		@media (max-width: toEm(960)) {
-			flex: 1;
-		}
+	@media (max-width: toEm(960)) {
+		flex: 1;
+	}
 	// .menu__body
 
 	&__body {
@@ -133,7 +133,7 @@ body {
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
-		@include adaptiveValue("column-gap",40,20, $widthTo:1000);
+		@include adaptiveValue("column-gap", 40, 20, $widthTo: 1000);
 		row-gap: toRem(5);
 
 		@media (max-width: toEm(960)) {
@@ -158,14 +158,14 @@ body {
 	// .menu__link
 
 	&__link {
-		text-transform: uppercase;
-		font-weight: 500;
+		font-weight: 400;
 		position: relative;
 		color: #000;
-		font-size: toRem(16);
+		font-size: toRem(18);
 		transition: color 0.3s;
-		&.active{
+		&.active {
 			color: #ef233c;
+			font-weight: 500;
 		}
 		@media (max-width: toEm(960)) {
 			font-size: toRem(28);
@@ -179,7 +179,7 @@ body {
 	@include adaptiveValue("padding-bottom", 15, 10);
 	@include adaptiveValue("padding-left", 25, 15);
 	@include adaptiveValue("padding-right", 25, 15);
-			background: #9f9fa4ca;
+	background: #9f9fa4ca;
 	font-weight: 500;
 	transition: background-color 0.3s;
 	color: #000;
@@ -241,7 +241,7 @@ body {
 .animation {
 	position: absolute;
 	bottom: 0;
-	height: toRem(3);
+	height: toRem(5);
 	background: #ef233c;
 	transition: all 0.3s ease;
 	left: 0;
@@ -256,7 +256,7 @@ body {
 //===================HERO=====================================================================
 
 .hero {
-	@include adaptiveValue("margin-top", 120,40);
+	@include adaptiveValue("margin-top", 100, 40);
 
 	// .hero__container
 
@@ -279,7 +279,7 @@ body {
 		position: relative;
 		overflow: hidden;
 		width: 100%;
-		height: calc(100vh - toRem(120));
+		height: calc(100vh - toRem(100));
 	}
 
 	// .hero__wrapper
@@ -308,13 +308,13 @@ body {
 		height: toRem(50);
 		background: rgba(132, 125, 125, 0.585);
 		backdrop-filter: blur(10px);
-		img{
+		img {
 			will-change: transform;
 			transition: transform 0.3s;
 		}
-		@media(any-hover:hover){
-			&:hover{
-				img{
+		@media (any-hover: hover) {
+			&:hover {
+				img {
 					transform: scale(1.2);
 				}
 			}
