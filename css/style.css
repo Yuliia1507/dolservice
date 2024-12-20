@@ -484,14 +484,7 @@ body.menu-open {
   }
 }
 .hero__swiper {
-  background: rgba(3, 60, 99, 0.836);
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 100%;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  min-height: 100vh;
+  position: relative;
   overflow: hidden;
   width: 100%;
 }
@@ -499,9 +492,6 @@ body.menu-open {
   .hero__swiper {
     min-height: 50vh;
   }
-}
-.hero__wrapper {
-  height: 100%;
 }
 .hero__links-wrap {
   display: -webkit-box;
