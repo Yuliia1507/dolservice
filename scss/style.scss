@@ -252,7 +252,12 @@ body {
 	// .hero__swiper
 
 	&__swiper {
-		position: relative;
+		background: rgba(3, 60, 99, 0.836); // кольору фону при зміні слайдера як !ексеремент!
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 100%;
+		align-items: stretch;
+		min-height: 100vh;
 		overflow: hidden;
 		width: 100%;
 		@media (max-width: toEm(767.98)) {
@@ -263,6 +268,8 @@ body {
 	// .hero__wrapper
 
 	&__wrapper {
+		height: 100%;
+		
 	}
 
 	// .hero__slide
