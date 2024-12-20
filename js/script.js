@@ -79,26 +79,39 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-	const heroSwiper = new Swiper('.hero__swiper', {
-		loop: true,
-		autoplay: {
-			delay: 5000, // Можна змінити час затримки між слайдами
-		},
-		spaceBetween: 10,
+const heroSwiper = new Swiper('.hero__swiper', {
+	loop: true, // Вимкнене зациклення
+	autoplay: {
+	  delay: 5000,  // Можна змінити час затримки між слайдами
+	  
+	},
+	spaceBetween: 10,
+	slidesPerView: 1,  // Один слайд для мобільних
+	effect: "fade", // Додаємо ефект зміни
+	fadeEffect: {
+	  crossFade: true, // Дозволяє плавний перехід між слайдами
+	},
+	pagination: {
+	  el: ".swiper-pagination",
+	  clickable: true,
+	},
+	navigation: {
+	  nextEl: '.swiper__button-next',
+	  prevEl: '.swiper__button-prev',
+	},
+	breakpoints: {
+	  640: {  // Для маленьких екранів
 		slidesPerView: 1,
-		effect: "fade", // Додаємо ефект зміни
-		fadeEffect: {
-			crossFade: true, // Дозволяє плавний перехід між слайдами
-		},
-		pagination: {
-			el: ".swiper-pagination",
-			clickable: true,
-		},
-		navigation: {
-			nextEl: '.swiper__button-next',
-			prevEl: '.swiper__button-prev',
-		},
-	});
-});
-
+		spaceBetween: 10,
+	  },
+	  1024: {  // Для більших екранів
+		slidesPerView: 1,
+		spaceBetween: 10,
+	  },
+	},
+	on: {
+	  resize: function () {
+		this.update();  // Оновлює слайдер після зміни розміру
+	  }
+	}
+  });
