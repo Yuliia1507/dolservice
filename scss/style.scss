@@ -252,7 +252,7 @@ body {
 	// .hero__swiper
 
 	&__swiper {
-		background: rgba(3, 60, 99, 0.836); // кольору фону при зміні слайдера як ексеремент
+		background: rgba(3, 60, 99, 0.836); // кольору фону при зміні слайдера як !ексеремент!
 		display: grid;
 		grid-auto-flow: column;
 		grid-auto-columns: 100%;
@@ -440,9 +440,8 @@ body {
 }
 
 
-
 .swiper-slide {
-	transition: opacity 1.075s ease-in-out !important;// Плавніша  поява я експеремент
+	transition: opacity 1.075s ease-in-out !important;// Плавніша  поява як !експеремент!
    }
   
   
