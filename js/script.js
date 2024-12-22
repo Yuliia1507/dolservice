@@ -23,7 +23,7 @@ icons.forEach(icon => {
 // console.log(arrow.getTotalLength());
 
 window.addEventListener('scroll', () => {
-	const header = document.querySelector('menu');
+	const header = document.querySelector('.menu');
 	if (window.scrollY > 50) {
 		header.classList.add('scrolled');
 	} else {

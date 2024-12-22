@@ -61,10 +61,17 @@ body {
 	width: 100%;
 	z-index: 1507;
 	transition: all 0.3s ease;
-	background-color: #8f7c7494;
+	background: linear-gradient(
+  to bottom, 
+  rgba(143, 124, 116, 0.881) 20%,  
+  rgba(143, 124, 116, 0.845) 40%, 
+  rgba(143, 124, 116, 0.751) 60%, 
+  rgba(143, 124, 116, 0.466) 80%, 
+  rgba(143, 124, 116, 0.217) 100%   
+);
 
 	&.scrolled {
-		background-color: #d11313;
+		background-color: #cb1a2e;
 		padding-top: toRem(5);
 		padding-bottom: toRem(5);
 	}
@@ -97,6 +104,7 @@ body {
 	}
 }
 .menu {
+	
 	@media (max-width: toEm(960)) {
 		flex: 1;
 	}
@@ -154,7 +162,7 @@ body {
 		@media (any-hover: hover) {
 			&:hover {
 				.menu__link {
-					color: #ef233c;
+					color:  #f13737;
 				}
 			}
 		}
@@ -165,11 +173,12 @@ body {
 		padding: toRem(3);
 		font-weight: 500;
 		position: relative;
-		color: #3b3838;
+		color: #c6eac6;
+	
 		font-size: toRem(18);
 		transition: color 0.3s;
 		&.active {
-			color: #ef233c;
+			color: #f13737;
 			font-weight: 500;
 		}
 		@media (max-width: toEm(960)) {
@@ -233,7 +242,7 @@ body {
 	position: absolute;
 	bottom: 0;
 	height: toRem(5);
-	background: #ef233c;
+	background: #f13737;
 	transition: all 0.3s ease;
 	left: 0;
 	width: 0;
@@ -249,9 +258,9 @@ body {
 .hero {
 	
 	
-	min-height: calc(100vh - 80px);
+	min-height: 100vh;
 	@media (max-width: toEm(767.98)) {
-		min-height: 50vh;
+		min-height: 60vh;
 	}
 
 	// .hero__swiper
@@ -263,11 +272,11 @@ body {
 		grid-auto-flow: column; 
 		grid-auto-columns: 100%; 
 		align-items: stretch;
-		min-height: calc(100vh - 80px);  // додав  
+		height: 100vh; 
 		overflow: hidden;
 		width: 100%; 
 		@media (max-width: toEm(767.98)) {
-			min-height: 50vh;
+			min-height: 60vh;
 		}
 	}
 

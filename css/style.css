@@ -144,10 +144,11 @@ body.menu-open {
   z-index: 1507;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background-color: rgba(143, 124, 116, 0.5803921569);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(143, 124, 116, 0.881)), color-stop(40%, rgba(143, 124, 116, 0.845)), color-stop(60%, rgba(143, 124, 116, 0.751)), color-stop(80%, rgba(143, 124, 116, 0.466)), to(rgba(143, 124, 116, 0.217)));
+  background: linear-gradient(to bottom, rgba(143, 124, 116, 0.881) 20%, rgba(143, 124, 116, 0.845) 40%, rgba(143, 124, 116, 0.751) 60%, rgba(143, 124, 116, 0.466) 80%, rgba(143, 124, 116, 0.217) 100%);
 }
 .header.scrolled {
-  background-color: #d11313;
+  background-color: #cb1a2e;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
 }
@@ -318,20 +319,20 @@ body.menu-open {
 }
 @media (any-hover: hover) {
   .menu__item:hover .menu__link {
-    color: #ef233c;
+    color: #f13737;
   }
 }
 .menu__link {
   padding: 0.1875rem;
   font-weight: 500;
   position: relative;
-  color: #3b3838;
+  color: #c6eac6;
   font-size: 1.125rem;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 .menu__link.active {
-  color: #ef233c;
+  color: #f13737;
   font-weight: 500;
 }
 @media (max-width: 60em) {
@@ -402,7 +403,7 @@ body.menu-open {
   position: absolute;
   bottom: 0;
   height: 0.3125rem;
-  background: #ef233c;
+  background: #f13737;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   left: 0;
@@ -416,11 +417,11 @@ body.menu-open {
 }
 
 .hero {
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
 }
 @media (max-width: 47.99875em) {
   .hero {
-    min-height: 50vh;
+    min-height: 60vh;
   }
 }
 .hero__swiper {
@@ -431,13 +432,13 @@ body.menu-open {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  min-height: calc(100vh - 80px);
+  height: 100vh;
   overflow: hidden;
   width: 100%;
 }
 @media (max-width: 47.99875em) {
   .hero__swiper {
-    min-height: 50vh;
+    min-height: 60vh;
   }
 }
 .hero__wrapper {
