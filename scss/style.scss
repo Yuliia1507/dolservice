@@ -272,7 +272,7 @@ body {
 		grid-auto-flow: column; 
 		grid-auto-columns: 100%; 
 		align-items: stretch;
-		height: 100vh; 
+		min-height: 100vh; 
 		overflow: hidden;
 		width: 100%; 
 		@media (max-width: toEm(767.98)) {
