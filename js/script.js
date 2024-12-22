@@ -23,7 +23,7 @@ icons.forEach(icon => {
 // console.log(arrow.getTotalLength());
 
 window.addEventListener('scroll', () => {
-	const header = document.querySelector('header');
+	const header = document.querySelector('menu');
 	if (window.scrollY > 50) {
 		header.classList.add('scrolled');
 	} else {
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const heroSwiper = new Swiper('.hero__swiper', {
 	loop: true, // Вимкнене зациклення
 	autoplay: {
-	  delay: 5000,  // Можна змінити час затримки між слайдами
+	  delay: 7000,  // Можна змінити час затримки між слайдами
 	  
 	},
 	spaceBetween: 10,
