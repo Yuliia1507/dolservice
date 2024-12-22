@@ -152,6 +152,7 @@ body.menu-open {
   padding-bottom: 0.3125rem;
 }
 .header__container {
+  height: 100%;
   font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -417,35 +418,12 @@ body.menu-open {
 .hero {
   min-height: calc(100vh - 80px);
 }
-@media (min-width: 81.25em) {
-  .hero {
-    margin-top: 4.375rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 81.25em) {
-  @supports (margin-top: clamp( 3.125rem , 2.7168367347rem  +  2.0408163265vw , 4.375rem )) {
-    .hero {
-      margin-top: clamp( 3.125rem , 2.7168367347rem  +  2.0408163265vw , 4.375rem );
-    }
-  }
-  @supports not (margin-top: clamp( 3.125rem , 2.7168367347rem  +  2.0408163265vw , 4.375rem )) {
-    .hero {
-      margin-top: calc(3.125rem + 1.25 * (100vw - 20rem) / 61.25);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .hero {
-    margin-top: 3.125rem;
-  }
-}
 @media (max-width: 47.99875em) {
   .hero {
     min-height: 50vh;
   }
 }
 .hero__swiper {
-  margin-top: 70px;
   background: rgba(3, 60, 99, 0.836);
   display: grid;
   grid-auto-flow: column;
