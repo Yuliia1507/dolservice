@@ -82,36 +82,66 @@ document.addEventListener('DOMContentLoaded', () => {
 const heroSwiper = new Swiper('.hero__swiper', {
 	loop: true, // Вимкнене зациклення
 	autoplay: {
-	  delay: 7000,  // Можна змінити час затримки між слайдами
-	  
+		delay: 7000,  // Можна змінити час затримки між слайдами
+
 	},
 	spaceBetween: 10,
 	slidesPerView: 1,  // Один слайд для мобільних
 	effect: "fade", // Додаємо ефект зміни
 	fadeEffect: {
-	  crossFade: true, // Дозволяє плавний перехід між слайдами
+		crossFade: true, // Дозволяє плавний перехід між слайдами
 	},
 	pagination: {
-	  el: ".swiper-pagination",
-	  clickable: true,
+		el: ".swiper-pagination",
+		clickable: true,
 	},
 	navigation: {
-	  nextEl: '.swiper__button-next',
-	  prevEl: '.swiper__button-prev',
+		nextEl: '.swiper__button-next',
+		prevEl: '.swiper__button-prev',
 	},
 	breakpoints: {
-	  640: {  // Для маленьких екранів
-		slidesPerView: 1,
-		spaceBetween: 10,
-	  },
-	  1024: {  // Для більших екранів
-		slidesPerView: 1,
-		spaceBetween: 10,
-	  },
+		640: {  // Для маленьких екранів
+			slidesPerView: 1,
+			spaceBetween: 10,
+		},
+		1024: {  // Для більших екранів
+			slidesPerView: 1,
+			spaceBetween: 10,
+		},
 	},
 	on: {
-	  resize: function () {
-		this.update();  // Оновлює слайдер після зміни розміру
-	  }
+		resize: function () {
+			this.update();  // Оновлює слайдер після зміни розміру
+		}
 	}
-  });
+});
+
+
+const openBtns = document.querySelectorAll(".slide-hero__button");
+const modal = document.querySelector(".hero__form");
+const overlay = document.querySelector(".overlay");
+
+// Перевірка наявності елементів
+if (openBtns.length > 0 && modal && overlay) {
+	// Відкриття форми
+	openBtns.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			modal.classList.add("visible");
+			overlay.classList.add("visible");
+			document.body.style.overflow = "hidden"; // Заборона прокрутки
+		});
+	});
+
+	// Закриття форми
+	overlay.addEventListener("click", closeModal);
+	const closeBtn = document.querySelector("#closeFormBtn");
+	if (closeBtn) {
+		closeBtn.addEventListener("click", closeModal);
+	}
+
+	function closeModal() {
+		modal.classList.remove("visible");
+		overlay.classList.remove("visible");
+		document.body.style.overflow = ""; // Відновлення прокрутки
+	}
+} 
