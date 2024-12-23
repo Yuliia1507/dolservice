@@ -627,6 +627,7 @@ body {
 	color: #000;
 	@include adaptiveValue("font-size", 35, 24);
 	font-weight: 600;
+	line-height: toRem(32);
 }
 .label {
 	padding: toRem(5);
@@ -635,18 +636,24 @@ body {
 	@include adaptiveValue("font-size", 18, 16);
 }
 .text {
-	@include adaptiveValue("font-size", 20, 18);
+	@include adaptiveValue("font-size", 18, 16, $widthTo: 950);
 	color: #585859;
 	opacity: 0.8;
 	line-height: toRem(27);
 }
 
 .about {
-	@include adaptiveValue("padding-top", 100, 50);
+	@include adaptiveValue("padding-top", 150, 50);
 	@include adaptiveValue("padding-bottom", 100, 50);
 
 	&__container {
 		display: flex;
+		justify-content: space-between;
+		@include adaptiveValue("gap", 80, 20);
+		align-items: center;
+		@media (max-width: toEm(880)) {
+			flex-direction: column;
+		}
 	}
 
 	&__label {
@@ -670,10 +677,30 @@ body {
 	}
 
 	&__counter {
+		@media (max-width: toEm(880)) {
+			max-width: toRem(500);
+			margin: 0 auto;
+		}
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 35, 15);
+		}
+	}
+	&__image {
+		@include adaptiveValue("padding-top", 35, 15);
+		border-top: toRem(1) solid #be2116;
+		max-width: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 }
 .counter {
+	@include adaptiveValue("padding-left", 50, 0);
+	@include adaptiveValue("padding-right", 50, 0);
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	@include adaptiveValue("gap", 25, 10);
 }
@@ -682,8 +709,14 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: toRem(8);
 	&__number {
 		font-weight: 700;
-		@include adaptiveValue("font-size", 40, 28);
+		@include adaptiveValue("font-size", 40, 20);
+	}
+	&__text {
+		color: #585859;
+		opacity: 0.8;
+		@include adaptiveValue("font-size", 14, 12);
 	}
 }

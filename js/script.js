@@ -144,4 +144,43 @@ if (openBtns.length > 0 && modal && overlay) {
 		overlay.classList.remove("visible");
 		document.body.style.overflow = ""; // Відновлення прокрутки
 	}
-} 
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+	const counters = document.querySelectorAll('.item-counter__number');
+
+	if (counters.length === 0) return; // Перевірка наявності елементів
+
+	const animateCounter = (element, start, end, suffix, duration) => {
+		let current = start;
+		const increment = (end - start) / (duration / 20); 
+
+		const timer = setInterval(() => {
+			current += increment;
+
+			if (current >= end) {
+				current = end;
+				clearInterval(timer);
+			}
+
+			// Оновлюємо текст із суфіксом
+			element.textContent = `${Math.floor(current).toLocaleString()}${suffix}`;
+		}, 20); // Частота оновлення (20 мс)
+	};
+
+	const handleIntersect = (entries, observer) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				const counter = entry.target;
+				const start = parseInt(counter.getAttribute('data-start'), 10) || 0; // Перевірка на наявність атрибутів
+				const end = parseInt(counter.getAttribute('data-end').replace(/\D/g, ""), 10) || 0;
+				const suffix = counter.getAttribute('data-suffix') || ""; // Якщо суфікс відсутній, беремо пустий рядок
+				animateCounter(counter, start, end, suffix, 1500); // Тривалість: 1.5 секунди
+				observer.unobserve(counter); // Вимикаємо спостереження для цього елемента
+			}
+		});
+	};
+
+	const observer = new IntersectionObserver(handleIntersect, { threshold: 0.5 });
+	counters.forEach(counter => observer.observe(counter));
+});

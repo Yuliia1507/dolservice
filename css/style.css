@@ -1452,6 +1452,7 @@ body.menu-open {
 .title {
   color: #000;
   font-weight: 600;
+  line-height: 2rem;
 }
 @media (min-width: 81.25em) {
   .title {
@@ -1511,41 +1512,41 @@ body.menu-open {
 }
 @media (min-width: 81.25em) {
   .text {
-    font-size: 1.25rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 81.25em) {
-  @supports (font-size: clamp( 1.125rem , 1.0841836735rem  +  0.2040816327vw , 1.25rem )) {
-    .text {
-      font-size: clamp( 1.125rem , 1.0841836735rem  +  0.2040816327vw , 1.25rem );
-    }
-  }
-  @supports not (font-size: clamp( 1.125rem , 1.0841836735rem  +  0.2040816327vw , 1.25rem )) {
-    .text {
-      font-size: calc(1.125rem + 0.125 * (100vw - 20rem) / 61.25);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .text {
     font-size: 1.125rem;
+  }
+}
+@media (min-width: 59.375em) and (max-width: 81.25em) {
+  @supports (font-size: clamp( 1rem , 0.6607142857rem  +  0.5714285714vw , 1.125rem )) {
+    .text {
+      font-size: clamp( 1rem , 0.6607142857rem  +  0.5714285714vw , 1.125rem );
+    }
+  }
+  @supports not (font-size: clamp( 1rem , 0.6607142857rem  +  0.5714285714vw , 1.125rem )) {
+    .text {
+      font-size: calc(1rem + 0.125 * (100vw - 59.375rem) / 21.875);
+    }
+  }
+}
+@media (max-width: 59.375em) {
+  .text {
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 81.25em) {
   .about {
-    padding-top: 6.25rem;
+    padding-top: 9.375rem;
   }
 }
 @media (min-width: 20em) and (max-width: 81.25em) {
-  @supports (padding-top: clamp( 3.125rem , 2.1045918367rem  +  5.1020408163vw , 6.25rem )) {
+  @supports (padding-top: clamp( 3.125rem , 1.0841836735rem  +  10.2040816327vw , 9.375rem )) {
     .about {
-      padding-top: clamp( 3.125rem , 2.1045918367rem  +  5.1020408163vw , 6.25rem );
+      padding-top: clamp( 3.125rem , 1.0841836735rem  +  10.2040816327vw , 9.375rem );
     }
   }
-  @supports not (padding-top: clamp( 3.125rem , 2.1045918367rem  +  5.1020408163vw , 6.25rem )) {
+  @supports not (padding-top: clamp( 3.125rem , 1.0841836735rem  +  10.2040816327vw , 9.375rem )) {
     .about {
-      padding-top: calc(3.125rem + 3.125 * (100vw - 20rem) / 61.25);
+      padding-top: calc(3.125rem + 6.25 * (100vw - 20rem) / 61.25);
     }
   }
 }
@@ -1580,6 +1581,42 @@ body.menu-open {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (min-width: 81.25em) {
+  .about__container {
+    gap: 5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.25em) {
+  @supports (gap: clamp( 1.25rem , 0.0255102041rem  +  6.1224489796vw , 5rem )) {
+    .about__container {
+      gap: clamp( 1.25rem , 0.0255102041rem  +  6.1224489796vw , 5rem );
+    }
+  }
+  @supports not (gap: clamp( 1.25rem , 0.0255102041rem  +  6.1224489796vw , 5rem )) {
+    .about__container {
+      gap: calc(1.25rem + 3.75 * (100vw - 20rem) / 61.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .about__container {
+    gap: 1.25rem;
+  }
+}
+@media (max-width: 55em) {
+  .about__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 @media (min-width: 81.25em) {
   .about__label:not(:last-child) {
@@ -1635,13 +1672,121 @@ body.menu-open {
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
 }
+@media (max-width: 55em) {
+  .about__counter {
+    max-width: 31.25rem;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 81.25em) {
+  .about__counter:not(:last-child) {
+    margin-bottom: 2.1875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.25em) {
+  @supports (margin-bottom: clamp( 0.9375rem , 0.5293367347rem  +  2.0408163265vw , 2.1875rem )) {
+    .about__counter:not(:last-child) {
+      margin-bottom: clamp( 0.9375rem , 0.5293367347rem  +  2.0408163265vw , 2.1875rem );
+    }
+  }
+  @supports not (margin-bottom: clamp( 0.9375rem , 0.5293367347rem  +  2.0408163265vw , 2.1875rem )) {
+    .about__counter:not(:last-child) {
+      margin-bottom: calc(0.9375rem + 1.25 * (100vw - 20rem) / 61.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .about__counter:not(:last-child) {
+    margin-bottom: 0.9375rem;
+  }
+}
+.about__image {
+  border-top: 0.0625rem solid #be2116;
+  max-width: 100%;
+}
+@media (min-width: 81.25em) {
+  .about__image {
+    padding-top: 2.1875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.25em) {
+  @supports (padding-top: clamp( 0.9375rem , 0.5293367347rem  +  2.0408163265vw , 2.1875rem )) {
+    .about__image {
+      padding-top: clamp( 0.9375rem , 0.5293367347rem  +  2.0408163265vw , 2.1875rem );
+    }
+  }
+  @supports not (padding-top: clamp( 0.9375rem , 0.5293367347rem  +  2.0408163265vw , 2.1875rem )) {
+    .about__image {
+      padding-top: calc(0.9375rem + 1.25 * (100vw - 20rem) / 61.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .about__image {
+    padding-top: 0.9375rem;
+  }
+}
+.about__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .counter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+@media (min-width: 81.25em) {
+  .counter {
+    padding-left: 3.125rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.25em) {
+  @supports (padding-left: clamp( 0.0000000625rem , -1.0204080804rem  +  5.1020407143vw , 3.125rem )) {
+    .counter {
+      padding-left: clamp( 0.0000000625rem , -1.0204080804rem  +  5.1020407143vw , 3.125rem );
+    }
+  }
+  @supports not (padding-left: clamp( 0.0000000625rem , -1.0204080804rem  +  5.1020407143vw , 3.125rem )) {
+    .counter {
+      padding-left: calc(0.0000000625rem + 3.1249999375 * (100vw - 20rem) / 61.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .counter {
+    padding-left: 0.0000000625rem;
+  }
+}
+@media (min-width: 81.25em) {
+  .counter {
+    padding-right: 3.125rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.25em) {
+  @supports (padding-right: clamp( 0.0000000625rem , -1.0204080804rem  +  5.1020407143vw , 3.125rem )) {
+    .counter {
+      padding-right: clamp( 0.0000000625rem , -1.0204080804rem  +  5.1020407143vw , 3.125rem );
+    }
+  }
+  @supports not (padding-right: clamp( 0.0000000625rem , -1.0204080804rem  +  5.1020407143vw , 3.125rem )) {
+    .counter {
+      padding-right: calc(0.0000000625rem + 3.1249999375 * (100vw - 20rem) / 61.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .counter {
+    padding-right: 0.0000000625rem;
+  }
 }
 @media (min-width: 81.25em) {
   .counter {
@@ -1677,6 +1822,7 @@ body.menu-open {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 0.5rem;
 }
 .item-counter__number {
   font-weight: 700;
@@ -1687,19 +1833,45 @@ body.menu-open {
   }
 }
 @media (min-width: 20em) and (max-width: 81.25em) {
-  @supports (font-size: clamp( 1.75rem , 1.5051020408rem  +  1.2244897959vw , 2.5rem )) {
+  @supports (font-size: clamp( 1.25rem , 0.8418367347rem  +  2.0408163265vw , 2.5rem )) {
     .item-counter__number {
-      font-size: clamp( 1.75rem , 1.5051020408rem  +  1.2244897959vw , 2.5rem );
+      font-size: clamp( 1.25rem , 0.8418367347rem  +  2.0408163265vw , 2.5rem );
     }
   }
-  @supports not (font-size: clamp( 1.75rem , 1.5051020408rem  +  1.2244897959vw , 2.5rem )) {
+  @supports not (font-size: clamp( 1.25rem , 0.8418367347rem  +  2.0408163265vw , 2.5rem )) {
     .item-counter__number {
-      font-size: calc(1.75rem + 0.75 * (100vw - 20rem) / 61.25);
+      font-size: calc(1.25rem + 1.25 * (100vw - 20rem) / 61.25);
     }
   }
 }
 @media (max-width: 20em) {
   .item-counter__number {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
+  }
+}
+.item-counter__text {
+  color: #585859;
+  opacity: 0.8;
+}
+@media (min-width: 81.25em) {
+  .item-counter__text {
+    font-size: 0.875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.25em) {
+  @supports (font-size: clamp( 0.75rem , 0.7091836735rem  +  0.2040816327vw , 0.875rem )) {
+    .item-counter__text {
+      font-size: clamp( 0.75rem , 0.7091836735rem  +  0.2040816327vw , 0.875rem );
+    }
+  }
+  @supports not (font-size: clamp( 0.75rem , 0.7091836735rem  +  0.2040816327vw , 0.875rem )) {
+    .item-counter__text {
+      font-size: calc(0.75rem + 0.125 * (100vw - 20rem) / 61.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .item-counter__text {
+    font-size: 0.75rem;
   }
 }
