@@ -1,0 +1,221 @@
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1270;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+.header {
+	@include adaptiveValue("padding-top", 20, 5);
+	@include adaptiveValue("padding-bottom", 20, 5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1507;
+	transition: all 0.3s ease;
+	background: linear-gradient(
+		to bottom,
+		rgba(143, 124, 116, 0.881) 20%,
+		rgba(143, 124, 116, 0.845) 40%,
+		rgba(143, 124, 116, 0.751) 60%,
+		rgba(143, 124, 116, 0.466) 80%,
+		rgba(143, 124, 116, 0.217) 100%
+	);
+
+	&.scrolled {
+		padding-top: toRem(5);
+		padding-bottom: toRem(5);
+	}
+	// .header__container
+
+	&__container {
+		height: 100%;
+		font-size: toRem(16);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptiveValue("gap", 24, 15);
+	}
+
+	// .header__logo
+
+	&__logo {
+		@include adaptiveValue("width", 270, 170, $widthTo: 950);
+		height: auto;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	// .header__button
+
+	&__button {
+	}
+}
+.menu {
+	@media (max-width: toEm(960)) {
+		flex: 1;
+	}
+	// .menu__body
+
+	&__body {
+		@media (max-width: toEm(960)) {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(106, 97, 97, 0.845);
+			backdrop-filter: blur(20px);
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			overflow: hidden;
+			transition: all 0.3s ease-in-out;
+			transform: scale(0) translate(100%, -100%);
+			transform-origin: top right;
+			display: flex;
+			opacity: 0;
+			visibility: hidden;
+			justify-content: center;
+			padding: toRem(15);
+			padding-top: toRem(80);
+			z-index: 56;
+			.menu-open & {
+				visibility: visible;
+				opacity: 1;
+				transform: scale(1) translate(0, 0);
+			}
+		}
+	}
+
+	// .menu__list
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		@include adaptiveValue("column-gap", 40, 20, $widthTo: 1000);
+		row-gap: toRem(5);
+
+		@media (max-width: toEm(960)) {
+			flex-direction: column;
+			align-items: center;
+			text-align: right;
+			row-gap: toRem(28);
+		}
+	}
+
+	// .menu__item
+
+	&__item {
+		@media (any-hover: hover) {
+			&:hover {
+				.menu__link {
+					color: #f13737;
+				}
+			}
+		}
+	}
+	// .menu__link
+
+	&__link {
+		font-weight: 500;
+		position: relative;
+		color: #fff;
+		font-size: toRem(18);
+		transition: color 0.3s;
+		&.active {
+			color: #f13737;
+			font-weight: 500;
+			text-shadow:
+				0 0 5px #ffffff,
+				0 0 15px #ffffff,
+				0 0 20px #ffffff;
+
+			// text-shadow: 2px 2px 4px #ffffff;
+
+			// text-shadow: 0 0 10px #ffffff;
+
+			// text-shadow:
+			// 	0 0 5px #ffffff,
+			// 	0 0 10px #ffffff;
+		}
+		@media (max-width: toEm(960)) {
+			font-size: toRem(28);
+		}
+	}
+}
+
+.icon-menu {
+	flex-shrink: 0;
+	z-index: 57;
+	display: none;
+
+	@media (max-width: toEm(960)) {
+		position: relative;
+		width: toRem(30);
+		height: toRem(26);
+		background: none;
+		border: none;
+		appearance: none;
+		display: inline-block;
+		transition: all 0.4s;
+		box-sizing: border-box;
+
+		span {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: toRem(3);
+			background-color: #000000;
+			display: inline-block;
+			transition: all 0.4s;
+			&:nth-of-type(1) {
+				top: 0;
+			}
+			&:nth-of-type(2) {
+				top: toRem(12);
+			}
+			&:nth-of-type(3) {
+				bottom: 0;
+			}
+		}
+	}
+}
+@media (max-width: toEm(960)) {
+	#menu02.active {
+		span:nth-of-type(1) {
+			transform: translateY(toRem(12)) rotate(-315deg);
+		}
+
+		span:nth-of-type(2) {
+			opacity: 0;
+		}
+
+		span:nth-of-type(3) {
+			transform: translateY(toRem(-11)) rotate(315deg);
+		}
+	}
+}
+.animation {
+	position: absolute;
+	bottom: 0;
+	height: toRem(5);
+	background: #f13737;
+	transition: all 0.3s ease;
+	left: 0;
+	width: 0;
+	display: none;
+	@media (min-width: toEm(950)) {
+		&.show {
+			display: block;
+		}
+	}
+}

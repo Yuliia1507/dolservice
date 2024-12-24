@@ -1,0 +1,30 @@
+//===================HERO=====================================================================
+
+.hero {
+	min-height: 100vh;
+	@media (max-width: toEm(767.98)) {
+		min-height: 60vh;
+	}
+
+
+	&__links-wrap {
+		display: flex;
+		align-items: center;
+		gap: toRem(10);
+	}
+	&__link {
+		@media (any-hover: hover) {
+			&:hover img {
+				transform: scale(1.1);
+			}
+		}
+		img {
+			will-change: transform;
+			transition: transform 0.3s;
+			@include adaptiveValue("width", 50, 35);
+			@include adaptiveValue("height", 50, 35);
+		}
+	}
+
+
+}
