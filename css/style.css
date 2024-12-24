@@ -7,6 +7,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Calibri";
+  src: url("../fonts/Calibri.woff2") format("woff2"), url("../fonts/Calibri.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 [class*=_icon-]::before {
   display: inline-block;
   font-family: "icons";
@@ -1331,13 +1338,13 @@ body.menu-open {
   width: 100%;
   border: 0.0625rem solid #ccc;
   border-radius: 0.3125rem;
-  -webkit-transition: border 0.3s;
-  transition: border 0.3s;
+  -webkit-transition: border 0.25s;
+  transition: border 0.25s;
 }
 .form-hero__box input:focus,
 .form-hero__box textarea:focus {
+  border: 0.0625rem solid #be2116;
   outline: 0.0625rem solid #be2116;
-  border: none;
 }
 .form-hero__box textarea {
   resize: none;
@@ -1509,6 +1516,7 @@ body.menu-open {
   color: #585859;
   opacity: 0.8;
   line-height: 1.6875rem;
+  font-family: "Calibri";
 }
 @media (min-width: 81.25em) {
   .text {
@@ -1672,6 +1680,9 @@ body.menu-open {
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
 }
+.about__counter {
+  font-family: "Calibri";
+}
 @media (max-width: 55em) {
   .about__counter {
     max-width: 31.25rem;
@@ -1701,6 +1712,7 @@ body.menu-open {
   }
 }
 .about__image {
+  background: url(../img/about_laptop.png) center/cover no-repeat;
   border-top: 0.0625rem solid #be2116;
   max-width: 100%;
 }
@@ -1727,6 +1739,8 @@ body.menu-open {
   }
 }
 .about__image img {
+  position: relative;
+  z-index: -1;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;

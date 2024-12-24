@@ -565,10 +565,11 @@ body {
 			width: 100%;
 			border: toRem(1) solid #ccc;
 			border-radius: toRem(5);
-			transition: border 0.3s;
+			transition: border 0.25s;
 			&:focus {
-				outline: toRem(1) solid #be2116;
-				border: none;
+				border: toRem(1) solid #be2116 ;
+				outline: toRem(1) solid #be2116 ;
+				
 			}
 		}
 		textarea {
@@ -586,6 +587,7 @@ body {
 	}
 
 	&__close {
+
 		position: absolute;
 		top: toRem(10);
 		right: toRem(20);
@@ -605,6 +607,7 @@ body {
 	color: #be2116;
 }
 .overlay {
+	
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -628,6 +631,7 @@ body {
 	@include adaptiveValue("font-size", 35, 24);
 	font-weight: 600;
 	line-height: toRem(32);
+	
 }
 .label {
 	padding: toRem(5);
@@ -640,6 +644,8 @@ body {
 	color: #585859;
 	opacity: 0.8;
 	line-height: toRem(27);
+	font-family: "Calibri";
+	
 }
 
 .about {
@@ -677,6 +683,7 @@ body {
 	}
 
 	&__counter {
+		font-family: "Calibri";
 		@media (max-width: toEm(880)) {
 			max-width: toRem(500);
 			margin: 0 auto;
@@ -686,10 +693,13 @@ body {
 		}
 	}
 	&__image {
+		background: url(../img/about_laptop.png) center / cover no-repeat ;
 		@include adaptiveValue("padding-top", 35, 15);
 		border-top: toRem(1) solid #be2116;
 		max-width: 100%;
 		img {
+			position: relative;
+			z-index: -1;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
@@ -706,6 +716,7 @@ body {
 }
 
 .item-counter {
+	
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -715,6 +726,7 @@ body {
 		@include adaptiveValue("font-size", 40, 20);
 	}
 	&__text {
+	
 		color: #585859;
 		opacity: 0.8;
 		@include adaptiveValue("font-size", 14, 12);
