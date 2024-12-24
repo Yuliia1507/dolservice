@@ -21,6 +21,7 @@
 
 @import "_about.scss";
 
+@import "_service.scss";
 
 // Мінімальна ширина сторінки
 $minWidth: 320;
@@ -60,18 +61,31 @@ body {
 	padding: 0 toRem(15);
 }
 
-
 .title {
 	color: #000;
 	@include adaptiveValue("font-size", 35, 24);
 	font-weight: 600;
 	line-height: toRem(37);
+	text-transform: capitalize;
+	&--white{
+		color: #fff;
+	}
+	&--margin {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 30, 15);
+		}
+	}
 }
 .label {
 	padding: toRem(5);
 	color: #be2116;
 	font-weight: 500;
 	@include adaptiveValue("font-size", 18, 16);
+	&--margin {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 20, 10);
+		}
+	}
 }
 .text {
 	@include adaptiveValue("font-size", 20, 18, $widthTo: 950);
@@ -79,5 +93,7 @@ body {
 	opacity: 0.8;
 	line-height: toRem(27);
 	font-family: "Calibri";
+	&--white{
+		color: #fff;
+	}
 }
-

@@ -15,15 +15,9 @@
 	}
 
 	&__label {
-		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 20, 10);
-		}
 	}
 
 	&__title {
-		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 35, 15);
-		}
 	}
 
 	&__left-part {
@@ -57,7 +51,7 @@
 		width: 100%;
 		height: toRem(1);
 		background: #be2116;
-			&:not(:last-child) {
+		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 35, 15);
 		}
 	}
