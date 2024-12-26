@@ -184,3 +184,21 @@ document.addEventListener('DOMContentLoaded', () => {
 	const observer = new IntersectionObserver(handleIntersect, { threshold: 0.5 });
 	counters.forEach(counter => observer.observe(counter));
 });
+
+
+//це для about__image зміна фото//
+const images = document.querySelectorAll('.about__image-anime');
+let currentIndex = 0;
+
+function changeImage() {
+    images.forEach((img, index) => {
+        img.classList.remove('active');
+        if (index === currentIndex) {
+            img.classList.add('active');
+        }
+    });
+ currentIndex = (currentIndex + 1) % images.length;
+}
+
+// Запускаємо зміну зображень кожні 6 секунд
+setInterval(changeImage, 6000);

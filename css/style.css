@@ -1570,6 +1570,8 @@ textarea {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 calc(60% - 5rem);
           flex: 1 1 calc(60% - 5rem);
+  position: relative;
+  width: 100%;
 }
 .about__counter {
   font-family: "Calibri";
@@ -1599,17 +1601,32 @@ textarea {
   }
 }
 .about__image {
+  position: relative;
   overflow: hidden;
   background: url(../img/about_laptop1.png) center/cover no-repeat;
   max-width: 100%;
+  height: auto;
+  aspect-ratio: 620/350;
 }
 .about__image img {
-  position: relative;
+  top: 0;
+  left: 0;
+  position: absolute;
   z-index: -1;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out, -webkit-filter 1s ease-in-out;
+  transition: opacity 1s ease-in-out, -webkit-filter 1s ease-in-out;
+  transition: opacity 1s ease-in-out, filter 1s ease-in-out;
+  transition: opacity 1s ease-in-out, filter 1s ease-in-out, -webkit-filter 1s ease-in-out;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+.about__image .about__image-anime.active {
+  opacity: 1;
+  -webkit-filter: blur(0);
+          filter: blur(0);
 }
 .about__line {
   width: 100%;
@@ -1617,28 +1634,27 @@ textarea {
   background: #be2116;
 }
 @media (min-width: 81.25em) {
-  .about__line:not(:last-child) {
+  .about__line {
     margin-bottom: 2.1875rem;
   }
 }
 @media (min-width: 20em) and (max-width: 81.25em) {
   @supports (margin-bottom: clamp( 0.9375rem , 0.5293367347rem  +  2.0408163265vw , 2.1875rem )) {
-    .about__line:not(:last-child) {
+    .about__line {
       margin-bottom: clamp( 0.9375rem , 0.5293367347rem  +  2.0408163265vw , 2.1875rem );
     }
   }
   @supports not (margin-bottom: clamp( 0.9375rem , 0.5293367347rem  +  2.0408163265vw , 2.1875rem )) {
-    .about__line:not(:last-child) {
+    .about__line {
       margin-bottom: calc(0.9375rem + 1.25 * (100vw - 20rem) / 61.25);
     }
   }
 }
 @media (max-width: 20em) {
-  .about__line:not(:last-child) {
+  .about__line {
     margin-bottom: 0.9375rem;
   }
 }
-
 .counter {
   display: -webkit-box;
   display: -ms-flexbox;
