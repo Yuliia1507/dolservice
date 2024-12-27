@@ -191,14 +191,57 @@ const images = document.querySelectorAll('.about__image-anime');
 let currentIndex = 0;
 
 function changeImage() {
-    images.forEach((img, index) => {
-        img.classList.remove('active');
-        if (index === currentIndex) {
-            img.classList.add('active');
-        }
-    });
- currentIndex = (currentIndex + 1) % images.length;
+	images.forEach((img, index) => {
+		img.classList.remove('active');
+		if (index === currentIndex) {
+			img.classList.add('active');
+		}
+	});
+	currentIndex = (currentIndex + 1) % images.length;
 }
 
-// Запускаємо зміну зображень кожні 6 секунд
-setInterval(changeImage, 6000);
+// Одразу викликаємо зміну зображень
+changeImage();
+
+// Запускаємо зміну зображень кожні 5 секунд
+setInterval(changeImage, 5000);
+
+
+//код для табів в секції Shop
+
+document.addEventListener('DOMContentLoaded', () => {
+	const buttons = document.querySelectorAll('.category__button');
+	const containers = document.querySelectorAll('.shop__wrapper');
+
+	const activateCategory = (category) => {
+		// Видалення активного стану з усіх кнопок
+		buttons.forEach(btn => btn.classList.remove('active'));
+		// Видалення активного стану з усіх контейнерів
+		containers.forEach(container => {
+			container.classList.remove('active');
+			container.style.display = 'none'; // Приховуємо всі категорії
+		});
+
+		// Додавання активного класу до кнопки
+		const activeButton = [...buttons].find(btn => btn.textContent.toLowerCase() === category.toLowerCase());
+		if (activeButton) activeButton.classList.add('active');
+
+		// Відображення відповідного контейнера
+		const activeContainer = [...containers].find(container => container.getAttribute('data-category') === category.toLowerCase());
+		if (activeContainer) {
+			activeContainer.style.display = 'grid'; // Показуємо контейнер
+			setTimeout(() => activeContainer.classList.add('active'), 10); // Плавна анімація
+		}
+	};
+
+	// Додаємо події до кнопок
+	buttons.forEach(button => {
+		button.addEventListener('click', () => {
+			const category = button.textContent; // Отримуємо назву категорії з тексту кнопки
+			activateCategory(category);
+		});
+	});
+
+	// Активуємо категорію Laptops за замовчуванням
+	activateCategory('Laptops');
+});

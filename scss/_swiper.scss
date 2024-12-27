@@ -148,6 +148,7 @@
 		background-color: #ef233c;
 		@include adaptiveValue("font-size", 20, 16);
 		text-transform: capitalize;
+		color: #fff;
 		box-shadow: 2px 2px 5px rgba(221, 7, 7, 0.5);
 		width: fit-content;
 		transition: background-color 0.3s;

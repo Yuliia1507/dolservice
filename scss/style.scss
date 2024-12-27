@@ -23,12 +23,14 @@
 
 @import "_service.scss";
 
+@import "_shop.scss";
+
 // Мінімальна ширина сторінки
 $minWidth: 320;
 // Ширина полотна (макету)
 $maxWidth: 1920;
 // Ширина обмежуючого контейнера (0 = немає обмеження)
-$maxWidthContainer: 1270;
+$maxWidthContainer: 1440;
 // Загальний відступ у контейнера
 // (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
 $containerPadding: 30;
@@ -57,7 +59,7 @@ body {
 
 [class*="__container"] {
 	margin: 0 auto;
-	max-width: toRem(1440);
+	max-width: toRem(1470);
 	padding: 0 toRem(15);
 }
 
@@ -79,11 +81,11 @@ body {
 .label {
 	padding: toRem(5);
 	color: #be2116;
-	font-weight: 500;
+	font-weight: 600;
 	@include adaptiveValue("font-size", 18, 16);
 	&--margin {
 		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 20, 10);
+			@include adaptiveValue("margin-bottom", 15, 10);
 		}
 	}
 }
