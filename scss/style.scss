@@ -25,6 +25,8 @@
 
 @import "_shop.scss";
 
+@import "_team.scss";
+
 // Мінімальна ширина сторінки
 $minWidth: 320;
 // Ширина полотна (макету)
@@ -91,7 +93,7 @@ body {
 }
 .text {
 	@include adaptiveValue("font-size", 20, 18, $widthTo: 950);
-	color: #585859;
+	color: #4f4f4f;
 	opacity: 0.8;
 	line-height: toRem(27);
 	font-family: "Calibri";

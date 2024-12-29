@@ -1,0 +1,79 @@
+.team {
+	@include adaptiveValue("padding-top", 100, 50);
+	@include adaptiveValue("padding-bottom", 100, 50);
+
+	// .team__container
+
+	&__container {
+		text-align: center;
+	}
+
+	// .team__label
+
+	&__label {
+	}
+
+	// .team__title
+
+	&__title {
+	}
+
+	// .team__text
+
+	&__text {
+		max-width: toEm(690);
+		margin: 0 auto;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 60, 40);
+		}
+	}
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+		gap: toRem(50);
+	}
+}
+.item-team {
+	background-color: #fff;
+	box-shadow: toRem(-5) toRem(5) toRem(10) rgba(0, 0, 0, 0.2);
+
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		@include adaptiveValue("top", -15, -10);
+		@include adaptiveValue("left", 15, 10);
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		border: toRem(3) solid #be2116;
+		z-index: -1;
+	}
+	&__image {
+		max-height: 100%;
+		height: auto;
+
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 15, 10);
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__content {
+		padding: toRem(15);
+	}
+	&__title {
+		@include adaptiveValue("font-size", 20, 18);
+		font-weight: 500;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 15, 10);
+		}
+	}
+	span {
+		@include adaptiveValue("font-size", 18, 16);
+		color: #4f4f4f;
+	}
+}

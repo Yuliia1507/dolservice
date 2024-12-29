@@ -8,12 +8,10 @@
 	&__container {
 		position: relative;
 		z-index: 2; // це якщо буде беграунд
-		background: #ffffff;
 		display: flex;
 		justify-content: space-between;
 		@include adaptiveValue("gap", 80, 20);
 		align-items: center;
-		border-radius: toRem(20);
 		@media (max-width: toEm(880)) {
 			flex-direction: column;
 		}
