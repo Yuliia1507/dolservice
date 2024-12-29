@@ -114,9 +114,8 @@
 	}
 }
 .item-shop {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+
+	
 	// .item-shop__image
 
 	&__image {
@@ -135,9 +134,10 @@
 				transform: scale(1.1);
 			}
 		}
-		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 15, 10);
-		}
+	}
+	&__content {
+		padding: toRem(15);
+		text-align: center
 	}
 
 	// .item-shop__title
